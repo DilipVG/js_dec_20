@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Track your Policy</title>
+</head>
+<body>
+           <!-- NAVBAR -->
+
+           <nav>
+            <div class="container">
+                <a href="/"><img src="{{ url_for('static', filename='img/LOGO.svg') }}" alt="JS Insurance"></a>
+
+                <div class="options">
+                    <div class="dropdown">
+                        <button class="dropbtn">Insurance Products <span><img src="{{ url_for('static', filename='img/alt-arrow-down.svg') }}" alt=""></span></button>
+                        <div class="dropdown-content">
+                            <a href="{{url_for('motor_page')}}"><img src="{{ url_for('static', filename='img/motor-product.svg') }}">Motor Product</a>
+                            <a href="{{url_for('travel_page')}}"><img src="{{ url_for('static', filename='img/travel-product.svg') }}">Travel Product</a>
+                            <a href="{{url_for('health_page')}}"><img src="{{ url_for('static', filename='img/health-product.svg') }}">Health Product</a>
+                            <a href="{{url_for('property_page')}}"><img src="{{ url_for('static', filename='img/property-product.svg') }}">Property Product</a>
+                            <a href="{{url_for('workmen_page')}}"><img src="{{ url_for('static', filename='img/workmen-product.svg') }}">Workmen Product</a>
+                        </div>            
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Support <span><img src="{{ url_for('static', filename='img/alt-arrow-down.svg') }}" alt=""></span></button>
+                        <div class="dropdown-content">
+                            <a href="{{url_for('track')}}"><img src="{{ url_for('static', filename='img/track-page-icon.svg') }}">Track your Policy</a>
+                            <a href="{{url_for('download')}}"><img src="{{ url_for('static', filename='img/download-page-icon.svg') }}">Download your Policy</a>
+                            <a href="{{url_for('claims')}}"><img src="{{ url_for('static', filename='img/claim-page-icon.svg') }}">Claim your Policy</a>
+                            <a href="tel: +919666697796"><img src="{{ url_for('static', filename='img/callback-icon.svg') }}">Request a Callback</a>
+                        </div>            
+                    </div>
+
+                    <a href="{{url_for('login')}}"><button class="sign-in" id="sign-in">Sign In</button></a>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- END OF NAVBAR -->
+
+
+    <div class="track-container">
+            <div class="track-input-container">
+            <img src="{{url_for('static', filename='img/track-page-icon.svg')}}" alt="">
+            <h2>To Track your Policy</h2>
+            <form method="POST" action="/track">
+                <select name="insurance_type" id="insurance_type">
+                    <option value="" disabled selected>Select Insurance Type</option>
+                    <option value="Motor Insurance">Motor Insurance</option>
+                    <option value="Health Insurance">Health Insurance</option>
+                    <option value="Travel Insurance">Travel Insurance</option>
+                    <option value="Property Insurance">Property Insurance</option>
+                    <option value="Workmen Insurance">Workmen Insurance</option>
+                </select>
+                <br>
+                <!-- <label for="company_name">Company Name:</label> -->
+                <!-- <input type="text" id="company_name" name="company_name" placeholder="Company Name"> -->
+                <select name="company_name" id="company_name">
+                    <option value="" disabled selected>Select Company Name</option>
+                    <option value="Bajaj">Bajaj</option>
+                    <option value="TATA AIG">TATA AIG</option>
+                    <option value="ICICI Lombard">ICICI Lombard</option>
+                    <option value="GoDigit">GoDigit</option>
+                    <option value="Liberty">Liberty</option>
+                    <option value="New India">New India</option>
+                    <option value="Oriental">Oriental</option>
+                    <option value="National">National</option>
+                    <option value="Sriram">Sriram</option>
+                    <option value="HDFC">HDFC</option>
+                    <option value="LIC">LIC</option>
+                </select>
+                <br>
+                <!-- <label for="policy_no">Policy No:</label> -->
+                <input type="text" id="policy_no" name="policy_no" placeholder="Policy No" required>
+                <br>
+                <input type="submit" id="submit" value="Track">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
